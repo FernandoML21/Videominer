@@ -36,6 +36,7 @@ public class VideoController {
     @GetMapping("/{id}")
     public Video findOne(@PathVariable String id) {
         Optional<Video> video = videoRepository.findById(id);
+
         if (video.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Video not found");
         }
@@ -49,9 +50,7 @@ public class VideoController {
     @ApiResponse(responseCode = "201", description = "Video creado con éxito")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Video create(@RequestBody Video video) {
-        return videoRepository.save(video);
-    }
+    public Video create(@RequestBody Video video) {return videoRepository.save(video);}
 
     @Operation(summary = "Actualizar un video",
             description = "Modifica los datos de un video existente")
