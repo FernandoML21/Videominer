@@ -1,0 +1,741 @@
+{
+  "info": {
+    "_postman_id": "4f5118f8-7b7f-485e-821e-225f8d8b9499",
+    "name": "VideoMiner_FullCollection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53752595",
+    "_collection_link": "https://go.postman.co/collection/53752595-4f5118f8-7b7f-485e-821e-225f8d8b9499?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. VideoMiner - Channels",
+      "item": [
+        {
+          "name": "Create Channel",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", () => { pm.response.to.have.status(201); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"id is 80\", () => { pm.expect(j.id).to.include(\"80\"); });",
+                  "pm.collectionVariables.set(\"channelId\", j.id);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"80\",\n  \"name\": \"tv\",\n  \"description\": \"canal de videos random\",\n  \"createdTime\": \"2023-01-01T23:36:17.306Z\",\n  \"videos\": [\n    {\n      \"id\": \"21856\",\n      \"name\": \"Alien: Isolation live on iOS\",\n      \"description\": \"HOW WILL YOU SURVIVE?\",\n      \"releaseTime\": \"2023-01-09T22:32:41.126Z\",\n      \"comments\": [{ \"id\": \"3955\", \"text\": \"Funniest video I've ever seen\", \"createdOn\": \"2023-01-03T23:45:40.196Z\" }],\n      \"captions\": [{ \"id\": \"1\", \"name\": \"/lazy-static/video-captions/68efe0a2.vtt\", \"language\": \"Spanish\" }],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    },\n    {\n      \"id\": \"21855\",\n      \"name\": \"Alien: Isolation live on iOS 2\",\n      \"description\": \"HOW WILL YOU SURVIVE? Part 2\",\n      \"releaseTime\": \"2023-01-09T22:21:23.816Z\",\n      \"comments\": [],\n      \"captions\": [{ \"id\": \"2\", \"name\": \"/lazy-static/video-captions/b62fe117.vtt\", \"language\": \"Welsh\" }],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    },\n    {\n      \"id\": \"6032\",\n      \"name\": \"Pickle-Kim\",\n      \"description\": \"It's not super sad though\",\n      \"releaseTime\": \"2023-01-02T17:26:13.298Z\",\n      \"comments\": [{ \"id\": \"3956\", \"text\": \"Funniest shit I've ever seen\", \"createdOn\": \"2023-01-03T23:45:40.196Z\" }],\n      \"captions\": [{ \"id\": \"3\", \"name\": \"/lazy-static/video-captions/f688d53c.vtt\", \"language\": \"Korean\" }],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    },\n    {\n      \"id\": \"6014\",\n      \"name\": \"High on Life Game\",\n      \"description\": \"Sounds familiar?\",\n      \"releaseTime\": \"2023-01-02T17:13:29.238Z\",\n      \"comments\": [],\n      \"captions\": [{ \"id\": \"4\", \"name\": \"/lazy-static/video-captions/1ee4a3c5.vtt\", \"language\": \"English\" }],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    },\n    {\n      \"id\": \"5638\",\n      \"name\": \"The brain plan\",\n      \"description\": null,\n      \"releaseTime\": \"2023-01-02T11:26:57.201Z\",\n      \"comments\": [],\n      \"captions\": [{ \"id\": \"5\", \"name\": \"/lazy-static/video-captions/1118903d.vtt\", \"language\": \"English\" }],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    },\n    {\n      \"id\": \"5404\",\n      \"name\": \"The News in 480p\",\n      \"description\": \"A good way to test uploads.\",\n      \"releaseTime\": \"2023-01-02T10:43:48.160Z\",\n      \"comments\": [],\n      \"captions\": [{ \"id\": \"6\", \"name\": \"/lazy-static/video-captions/8309b1ff.vtt\", \"language\": \"English\" }],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    },\n    {\n      \"id\": \"5368\",\n      \"name\": \"The Internet\",\n      \"description\": null,\n      \"releaseTime\": \"2023-01-02T10:41:12.558Z\",\n      \"comments\": [],\n      \"captions\": [{ \"id\": \"7\", \"name\": \"/lazy-static/video-captions/e6528ccd.vtt\", \"language\": \"English\" }],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    },\n    {\n      \"id\": \"5326\",\n      \"name\": \"A beautiful timelapse\",\n      \"description\": \"Found somewhere on the web!\",\n      \"releaseTime\": \"2023-01-02T10:38:40.879Z\",\n      \"comments\": [],\n      \"captions\": [],\n      \"user\": { \"name\": \"stux\", \"user_link\": \"https://peertube.tv/accounts/stux\", \"picture_link\": \"https://peertube.tv/lazy-static/avatars/f8463b3f.png\" }\n    }\n  ]\n}"
+            },
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/channels",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "channels"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get all channels",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response is an array\", () => { pm.expect(j).to.be.an('array'); });",
+                  "pm.test(\"At least one channel exists\", () => { pm.expect(j.length).to.be.above(0); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/channels",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "channels"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get channel by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"id is 80\", () => { pm.expect(j.id).to.include(\"80\"); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/channels/80",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "channels",
+                "80"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get channel by ID - Not Found",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", () => { pm.response.to.have.status(404); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/channels/999999",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "channels",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. VideoMiner - Videos",
+      "item": [
+        {
+          "name": "Get all videos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response is an array\", () => { pm.expect(j).to.be.an('array'); });",
+                  "pm.test(\"Has 8 videos\", () => { pm.expect(j.length).to.equal(8); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/videos",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "videos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get video by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"id is 21856\", () => { pm.expect(j.id).to.include(\"21856\"); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/videos/21856",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "videos",
+                "21856"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get video by ID - Not Found",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", () => { pm.response.to.have.status(404); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/videos/999999",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "videos",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. VideoMiner - Captions",
+      "item": [
+        {
+          "name": "Get all captions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response is an array\", () => { pm.expect(j).to.be.an('array'); });",
+                  "pm.test(\"Has 7 captions\", () => { pm.expect(j.length).to.equal(7); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/captions",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "captions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get caption by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"id is 1\", () => { pm.expect(j.id).to.include(\"1\"); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/captions/1",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "captions",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get captions by video ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response is an array\", () => { pm.expect(j).to.be.an('array'); });",
+                  "pm.test(\"Has 1 caption for video 21856\", () => { pm.expect(j.length).to.equal(1); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/videos/21856/captions",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "videos",
+                "21856",
+                "captions"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get caption by ID - Not Found",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", () => { pm.response.to.have.status(404); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/captions/999999",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "captions",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. VideoMiner - Comments",
+      "item": [
+        {
+          "name": "Get all comments",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response is an array\", () => { pm.expect(j).to.be.an('array'); });",
+                  "pm.test(\"Has 2 comments\", () => { pm.expect(j.length).to.equal(2); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/comments",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get comment by ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"id is 3956\", () => { pm.expect(j.id).to.include(\"3956\"); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/comments/3956",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "comments",
+                "3956"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get comments by video ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response is an array\", () => { pm.expect(j).to.be.an('array'); });",
+                  "pm.test(\"Has 1 comment for video 6032\", () => { pm.expect(j.length).to.equal(1); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/videos/6032/comments",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "videos",
+                "6032",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get comment by ID - Not Found",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404\", () => { pm.response.to.have.status(404); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{videominerUrl}}/videominer/comments/999999",
+              "host": [
+                "{{videominerUrl}}"
+              ],
+              "path": [
+                "videominer",
+                "comments",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "5. PeerTubeMiner",
+      "item": [
+        {
+          "name": "POST canal PeerTube a VideoMiner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", () => { pm.response.to.have.status(201); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response has id\", () => { pm.expect(j).to.have.property('id'); });",
+                  "pm.test(\"Response has videos\", () => { pm.expect(j).to.have.property('videos'); });"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{peertubeUrl}}/peertube/kylonekovt@spectra.video?maxVideos=5",
+              "host": [
+                "{{peertubeUrl}}"
+              ],
+              "path": [
+                "peertube",
+                "kylonekovt@spectra.video"
+              ],
+              "query": [
+                {
+                  "key": "maxVideos",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET canal PeerTube (solo lectura)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response has id\", () => { pm.expect(j).to.have.property('id'); });",
+                  "pm.test(\"Response has videos\", () => { pm.expect(j).to.have.property('videos'); });"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{peertubeUrl}}/peertube/kylonekovt@spectra.video?maxVideos=5",
+              "host": [
+                "{{peertubeUrl}}"
+              ],
+              "path": [
+                "peertube",
+                "kylonekovt@spectra.video"
+              ],
+              "query": [
+                {
+                  "key": "maxVideos",
+                  "value": "5"
+                },
+                {
+                  "key": "maxComments",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "6. DailymotionMiner",
+      "item": [
+        {
+          "name": "POST canal Dailymotion a VideoMiner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 201\", () => { pm.response.to.have.status(201); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response has id\", () => { pm.expect(j).to.have.property('id'); });",
+                  "pm.test(\"Response has videos\", () => { pm.expect(j).to.have.property('videos'); });"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "1234",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "X-API-KEY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{dailymotionUrl}}/dailymotion/euronews-es?maxVideos=5",
+              "host": [
+                "{{dailymotionUrl}}"
+              ],
+              "path": [
+                "dailymotion",
+                "euronews-es"
+              ],
+              "query": [
+                {
+                  "key": "maxVideos",
+                  "value": "5"
+                },
+                {
+                  "key": "maxPages",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET canal Dailymotion (solo lectura)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", () => { pm.response.to.have.status(200); });",
+                  "var j = pm.response.json();",
+                  "pm.test(\"Response has id\", () => { pm.expect(j).to.have.property('id'); });",
+                  "pm.test(\"Response has videos\", () => { pm.expect(j).to.have.property('videos'); });"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dailymotion-production.up.railway.app/dailymotion/euronews-es?maxVideos=5",
+              "protocol": "https",
+              "host": [
+                "dailymotion-production",
+                "up",
+                "railway",
+                "app"
+              ],
+              "path": [
+                "dailymotion",
+                "euronews-es"
+              ],
+              "query": [
+                {
+                  "key": "maxVideos",
+                  "value": "5"
+                },
+                {
+                  "key": "maxPages",
+                  "value": "2",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "videominerUrl",
+      "value": "https://videominer-production-4553.up.railway.app"
+    },
+    {
+      "key": "peertubeUrl",
+      "value": "https://peertube-production-9e90.up.railway.app"
+    },
+    {
+      "key": "dailymotionUrl",
+      "value": "https://dailymotion-production.up.railway.app"
+    },
+    {
+      "key": "channelId",
+      "value": ""
+    }
+  ]
+}
