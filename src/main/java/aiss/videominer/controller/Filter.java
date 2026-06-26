@@ -11,12 +11,14 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 @Component
 public class Filter extends OncePerRequestFilter {
-    @Value("{videominer.api.key}")
+    @Value("${videominer.api.key}")
     private  String apiKey;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
-        if (request.getRequestURI().startsWith("/h2-ui")) {
+        if (request.getRequestURI().startsWith("/h2-ui")
+                ||request.getRequestURI().startsWith("/swagger-ui")
+                ||request.getRequestURI().startsWith("/v3/api-docs")) {
             filterChain.doFilter(request, response);
             return;
         }
