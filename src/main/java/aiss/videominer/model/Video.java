@@ -44,11 +44,14 @@ public class Video {
     @JoinColumn(name = "videoId")
     private List<Caption> captions;
 
-    @JsonProperty("thumbnail")
-    @OneToOne(cascade = CascadeType.ALL)
-    private Thumbnail thumbnail;
 
+    @JsonProperty("thumbnails")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "video_id")
+    private List<Thumbnail> thumbnails;
 
+    public List<Thumbnail> getThumbnails() { return thumbnails; }
+    public void setThumbnails(List<Thumbnail> thumbnails) { this.thumbnails = thumbnails; }
 
 
     public String getId() {
@@ -107,8 +110,6 @@ public class Video {
         this.captions = captions;
     }
 
-    public Thumbnail getThumbnail() { return thumbnail; }
-    public void setThumbnail(Thumbnail thumbnail) { this.thumbnail = thumbnail; }
 
     @Override
     public String toString() {
@@ -120,7 +121,7 @@ public class Video {
                 ", author=" + author +
                 ", comments=" + comments +
                 ", captions=" + captions +
-                ", thumbnail=" + thumbnail +
+                ", thumbnail=" + thumbnails +
                 '}';
     }
 }
