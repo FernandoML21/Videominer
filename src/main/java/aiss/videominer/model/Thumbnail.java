@@ -18,14 +18,16 @@ public class Thumbnail {
     @Column(columnDefinition = "TEXT")
     private String url;
 
-    @JsonProperty("thumbnailUrl")
-    @Column(columnDefinition = "TEXT")
-    private String thumbnailUrl;
+    @JsonProperty("size_type")
+    @NotEmpty(message = "Thumbnail size type cannot be empty")
+    private String sizeType;
 
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
+
     public String getUrl() { return url; }
     public void setUrl(String url) { this.url = url; }
-    public String getThumbnailUrl() { return thumbnailUrl; }
-    public void setThumbnailUrl(String thumbnailUrl) { this.thumbnailUrl = thumbnailUrl; }
+
+    public String getSizeType() { return sizeType; }
+    public void setSizeType(String sizeType) { this.sizeType = sizeType; }
 }
