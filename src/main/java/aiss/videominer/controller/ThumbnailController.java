@@ -48,18 +48,18 @@ public class ThumbnailController {
                         HttpStatus.NOT_FOUND, "Thumbnail not found"));
     }
 
-    @Operation(summary = "Obtener miniatura de un vídeo")
+    @Operation(summary = "Obtener miniaturas de un vídeo")
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Miniatura del vídeo encontrada"),
             @ApiResponse(responseCode = "404", description = "Vídeo no encontrado")
     })
-    @GetMapping("/videos/{videoId}/thumbnail")
-    public Thumbnail findByVideoId(
+    @GetMapping("/videos/{videoId}/thumbnails")
+    public List<Thumbnail> findByVideoId(
             @Parameter(description = "ID del vídeo")
             @PathVariable String videoId) {
         return videoRepository.findById(videoId)
                 .orElseThrow(() -> new ResponseStatusException(
                         HttpStatus.NOT_FOUND, "Video not found"))
-                .getThumbnail();
+                .getThumbnails();  
     }
 }
